@@ -1,14 +1,19 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
+const bot = new Discord.Client({disableEveryone: true});
 
-bot.on('ready', () => {
-    console.log('I am ready!');
+bot.on("ready", async () => {
+    console.log('De bot is opgestart!');
     bot.user.setGame("Duncan");
 });
 
-bot.on('message', message => {
-    if (message.content === 'ping') {
-    	message.reply('pong');
+bot.on("message", async message => {
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return;
+
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = message.channel.send("Hallo!");
   	}
 });
 
