@@ -3,7 +3,7 @@ const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
     console.log('De bot is opgestart!');
-    bot.user.setGame("Duncan");
+    bot.user.setGame("door Duncan");
 });
 
 bot.on("message", async message => {
