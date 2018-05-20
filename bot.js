@@ -21,10 +21,9 @@ bot.on("message", async message => {
 
     let sicon = message.guild.displayAvatarURL;
     var serverembed = new Discord.RichEmbed()
-    .setDescription("Server Informatie")
+    .setTitle("TeVeelGames bot help")
     .setColor("#2377ff")
-    .setThumbnail(sicon)
-    .addField("Server Naam", message.guild.name)
+    .addField("/ban", message.guild.name)
     .addField("Je bent gejoined op", message.member.joinedAt)
     .addField("Leden", message.guild.memberCount);
 
@@ -34,11 +33,11 @@ bot.on("message", async message => {
   if(cmd === `${prefix}botinfo`){
 
     var botembed = new Discord.RichEmbed()
-    .setDescription("Bot informatie")
+    .setDescription("Bot informatie:")
     .setColor("#2377ff")
     .addField("Bot Naam", bot.user.username);
 
-    return message.channel.send(botembed);
+    return message.channel.sendEmbed(botembed);
   }
 
   if(cmd === `${prefix}hallo`){
