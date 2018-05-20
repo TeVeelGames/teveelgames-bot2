@@ -25,7 +25,6 @@ bot.on("message", async message => {
     .setColor("#2377ff")
     .setThumbnail(sicon)
     .addField("Server Naam", message.guild.name)
-    .addfield("Gemaakt op", message.guild,createdAt)
     .addField("Je bent gejoined op", message.member.joinedAt)
     .addField("Leden", message.guild.memberCount);
 
