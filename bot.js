@@ -2,19 +2,23 @@ const Discord = require('discord.js');
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
-    console.log('De bot is opgestart!');
-    bot.user.setGame("door Duncan");
+  console.log('De bot is opgestart!');
+  bot.user.setGame("door Duncan");
 });
 
 bot.on("message", async message => {
-    if(message.author.bot) return;
-    if(message.channel.type === "dm") return;
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
 
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = message.channel.send("Hallo!");
-  	}
+  let prefix = botconfig.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+    
+  if(cmd === `${prefix}hallo`){
+    return message.channel.send("Hallo!")  
+  }
+    
 });
 
 // THIS  MUST  BE  THIS  WAY
