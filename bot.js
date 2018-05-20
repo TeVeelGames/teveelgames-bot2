@@ -16,7 +16,23 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
-    
+  
+  if(cmd === `${prefix}serverinfo`){
+
+    let sicon = message.guild.displayAvatarURL;
+    let serverembed = new Discord.RichEmbed()
+    .setDescription("Server Informatie")
+    .setColor("#2377ff")
+    .setThumbnail(sicon)
+    .addField("Server Naam", message.guild.name)
+    .addfield("Gemaakt op", message.guild,createdAt)
+    .addField("Je bent gejoined op", message.member.joinedAt)
+    .addField("Leden", message.guild.memberCount);
+
+    return message.channel.send(serverembed);
+  }
+
+
   if(cmd === `${prefix}botinfo`){
 
     let botembed = new Discord.RichEmbed()
