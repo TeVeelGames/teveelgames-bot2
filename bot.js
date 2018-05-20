@@ -17,6 +17,16 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
     
+  if (cmd === `${prefix}botinfo`){
+
+     let botembed = new Discord.Richembed()
+     .setDiscription("Bot informatie")
+     .setColor("#2377ff")
+     .addField("Bot Naam", bot.user.username);
+
+     return message.channel.send(botembed);
+  }
+
   if(cmd === `${prefix}hallo`){
     return message.channel.send("Hallo!")  
   }
