@@ -19,12 +19,12 @@ bot.on("message", async message => {
     
   if(cmd === `${prefix}botinfo`){
 
-     let botembed = new Discord.RichEmbed()
-     .setDescription("Bot informatie")
-     .setColor("#2377ff")
-     .addField("Bot Naam", bot.user.username);
+    let botembed = new Discord.RichEmbed()
+    .setDescription("Bot informatie")
+    .setColor("#2377ff")
+    .addField("Bot Naam", bot.user.username);
 
-     return message.channel.send(botembed);
+    return message.channel.send(botembed);
   }
 
   if(cmd === `${prefix}hallo`){
