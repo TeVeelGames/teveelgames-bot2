@@ -5,7 +5,8 @@ const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
   console.log('De bot is opgestart!');
-  bot.user.setGame("door Duncan");
+  
+  bot.user.setActivity("TeVeelGames op Youtube", {type: "WATCHING"})
 });
 
 bot.on("message", async message => {
