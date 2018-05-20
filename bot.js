@@ -28,7 +28,7 @@ bot.on("message", async message => {
     .addField("Je bent gejoined op", message.member.joinedAt)
     .addField("Leden", message.guild.memberCount);
 
-    return message.channel.sendEmbed(serverembed);
+    return message.channel.send(serverembed);
   }
 
   if(cmd === `${prefix}botinfo`){
@@ -38,7 +38,7 @@ bot.on("message", async message => {
     .setColor("#2377ff")
     .addField("Bot Naam", bot.user.username);
 
-    return message.channel.sendEmbed(botembed);
+    return message.channel.send(botembed);
   }
 
   if(cmd === `${prefix}hallo`){
