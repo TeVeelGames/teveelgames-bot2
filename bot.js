@@ -29,7 +29,7 @@ bot.on("message", async message => {
     .addField("Je bent gejoined op", message.member.joinedAt)
     .addField("Leden", message.guild.memberCount);
 
-    return message.channel.send(serverembed);
+    return message.channel.sendEmbed(new Discord.RichEmbed);
   }
 
   if(cmd === `${prefix}botinfo`){
