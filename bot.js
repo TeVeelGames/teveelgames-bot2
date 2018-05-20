@@ -20,7 +20,7 @@ bot.on("message", async message => {
   if (cmd === `${prefix}botinfo`){
 
      let botembed = new Discord.Richembed()
-     .setDiscription("Bot informatie")
+     .setDescription("Bot informatie")
      .setColor("#2377ff")
      .addField("Bot Naam", bot.user.username);
 
