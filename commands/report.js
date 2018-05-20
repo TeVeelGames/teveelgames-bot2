@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
 
     let reportschannel = message.guild.channels.find(`name`, "reports");
     if(!reportschannel) return message.channel.send("Kan report kanaal niet vinden.");
-    return message.channel.send(`✅ Je report is verzonden`)
+    if(reportschannel) return message.channel.send(`✅ Je report is verzonden`);
     reportschannel.sendEmbed(reportEmbed);
 
 }
